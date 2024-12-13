@@ -1,0 +1,609 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+:root {
+  --background-light: #ffffff;
+  --foreground-light: #171717;
+  --background-dark: #121212;
+  --foreground-dark: #e0e0e0;
+  --accent-color: #0070f3; /* Main accent color */
+  --accent-dark: #005bb5; /* Darker shade for hover effects */
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground-light);
+  background: var(--background-light);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark-mode {
+  color: var(--foreground-dark);
+  background: var(--background-dark);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Elements styling */
+.buttonContainer {
+  display: flex;
+  justify-content: center; 
+}
+
+.viewButton {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.viewButton:hover {
+  background-color: #005bb5;
+}
+
+select {
+  display: block;
+  margin: 0 auto; /* Center the dropdown */
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #0070f3;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+select:hover {
+  border-color: #005bb5; /* Darker border on hover */
+}
+
+select:focus {
+  outline: none; /* Remove default outline */
+  border-color: #0070f3; /* Highlight border on focus */
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5); /* Optional shadow */
+}
+
+
+option {
+  padding: 10px;
+  background-color: #f9f9f9; /* Background color for options */
+  color: #333; /* Text color */
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+
+/* Books Styling */
+.booksContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: space-between; /* Space between cards */
+  margin: 0 auto; /* Center the container */
+  max-width: 1200px; /* Limit the width of the container */
+  padding: 20px; /* Add some padding around the container */
+  justify-content: center;
+}
+
+.bookCard {
+  flex: 1 1 calc(33.333% - 20px); /* Three cards per row with spacing */
+  margin: 10px; /* Margin around each card */
+  background-color: #f9f9f9; /* Card background color */
+  border: 1px solid #ddd; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px; /* Inner padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.3s; /* Transition for hover effect */
+  max-width: 400px;
+}
+
+.bookCard:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.bookTitle {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.bookDescription {
+  margin-bottom: 10px;
+}
+
+.bookPrice {
+  /* font-weight: bold; */
+  margin-bottom: 10px;
+}
+
+.bookRating {
+  color: #ff9102; /* Gold color for rating */
+  margin-bottom: 10px;
+}
+
+.bookAuthor, .bookGenre {
+  font-style: italic;
+  margin: 5px 0;
+  
+}
+
+/* Author Page */
+
+.authorDetails {
+  max-width: 800px; /* Limit the width of the content */
+  margin: 0 auto; /* Center the content */
+  padding: 20px; /* Add padding around the content */
+  background-color: #f9f9f9; /* Light gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  transition: transform 0.3s; /* Transition for hover effect */
+  text-align: center;
+  background-color: #f9f9f9; /* Card background color */
+  border: 1px solid #ddd; /* Card border */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.authorDetails:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.authorName {
+  font-size: 1.2rem; /* Slightly larger font size for author name */
+  margin: 10px 0; /* Space above and below */
+}
+
+.authorBiography {
+  font-size: 1.3rem; /* Normal font size for biography */
+  color: #555; /* Medium gray color for text */
+  line-height: 1.6; /* Improve readability with line height */
+}
+
+/* Genre Page */
+
+.genresContainer {
+  max-width: 600px; /* Limit the width for better readability */
+  margin: 40px auto; /* Center the container with some margin */
+  padding: 20px; /* Add padding inside the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s; /* Transition for hover effect */
+  text-align: center;
+  background-color: #f9f9f9; /* Card background color */
+  border: 1px solid #ddd; /* Card border */
+}
+
+.genresContainer:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.genresContainer ul {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0; /* Remove padding */
+}
+
+.genresContainer li {
+  margin: 10px 0; /* Space between items */
+}
+
+.genresContainer a {
+  text-decoration: none; /* Remove underline from links */
+  color: #0070f3; /* Link color */
+  font-size: 1.2rem; /* Slightly larger font size for links */
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.genresContainer a:hover {
+  color: #005bb5; /* Darker shade on hover for interactivity */
+  text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Navbar */
+.navbar {
+  background-color:#f6f6f6;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode .navbar {
+  background-color: #2a2a2a; /* Dark navbar background */
+}
+
+.navList {
+  list-style-type: none;
+  margin-left: auto; /* Adjusted for better alignment */
+  display: flex;
+  gap: 20px;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navItem a:hover {
+  color: var(--accent-dark);
+}
+
+body.dark-mode .navItem a {
+  color: var(--foreground-dark);
+}
+
+body.dark-mode .navItem a:hover {
+  color: #90caf9; /* Lighter shade for dark mode */
+}
+
+
+
+/* Toogle Button */
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: auto; /* Align toggle button to the right */
+  width: 70px; /* Increased width */
+  height: 30px; /* Height remains the same */
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.toggleCircle {
+  width: 28px; /* Circle width */
+  height: 28px; /* Circle height */
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px; 
+  transition: transform 0.8s;
+}
+
+
+.toggleCircle.dark {
+  transform: translateX(40px); 
+  background-color: rgb(42, 39, 39);
+}
+
+
+.toggleLabel {
+  margin-left: 40px; 
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  transition: margin-left 0.7s; 
+}
+
+.toggleLabel.dark {
+  margin-left: 10px;
+}
+
+
+body.dark-mode .heading {
+  color: var(--foreground-dark); /* Heading color in dark mode */
+}
+
+body.dark-mode .heading,
+body.dark-mode .authorName,
+body.dark-mode .bookTitle ,
+body.dark-mode .authorBiography{
+  color: var(--foreground-dark); /* Lighter text for headings in dark mode */
+}
+
+.heading,
+.authorName,
+.bookTitle {
+  color: var(--foreground-light);
+}
+
+body.dark-mode .bookCard,
+body.dark-mode .authorDetails,
+body.dark-mode .genresContainer {
+  background-color: #2a2a2a; /* Dark background for cards */
+  border-color: #444; /* Darker border for cards */
+}
+
+body.dark-mode .viewButton {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .viewButton:hover {
+  background-color: #777; /* Lighter shade for hover */
+}
+
+body.dark-mode .toggleLabel {
+  color: var(--foreground-dark);
+}
+
+body.dark-mode .themeToggle {
+  background-color: #423c3c; /* Dark toggle background */
+}
+
+
+body.dark-mode select {
+  border-color: #555; /* Darker border for dark mode */
+  background-color: #2a2a2a; /* Dark background for select */
+  color: #e0e0e0; /* Lighter text color for dark mode */
+}
+
+body.dark-mode select:hover {
+  border-color: #777; /* Darker border on hover in dark mode */
+}
+
+body.dark-mode option {
+  background-color: #2a2a2a; /* Dark background for options */
+  color: #e0e0e0; /* Lighter text color for options */
+}
+
+/* Adjust hover for options */
+body.dark-mode option:hover {
+  background-color: #444; /* Slightly lighter background for hover */
+}
+
+
+.toggleImage {
+  width: 24px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  /* margin-left: 10px; Space between the circle and image */
+  margin-left: 40px; 
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  transition: margin-left 0.7s; 
+}
+
+.toggleImage.dark {
+  margin-left: 10px;
+  width: 30px; 
+  height: auto; 
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* styles/404.module.css */
+.notFoundcontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+  /* background-color: #f9f9f9; Light background */
+  color: #333; /* Text color */
+  text-align: center;
+}
+
+.notFoundtitle {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.notFoundmessage {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.homeLink {
+  padding: 10px 20px;
+  background-color: #0070f3; /* Primary button color */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.homeLink:hover {
+  background-color: #005bb5; /* Darker shade on hover */
+}
+
+body.dark-mode .notFoundcontainer {
+  /* background-color: #171717; Dark background */
+  color: #ededed; /* Light text color */
+}
+
+body.dark-mode .homeLink {
+  background-color: #555;
+  color: #fff;
+}
+
+body.dark-mode .homeLink:hover {
+  background-color: #777;
+}
+
+
+
+
+
+/* Search Container Styling */
+.SearchContainer {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  gap: 10px;
+
+}
+body.dark-mode .SearchContainer {
+  background-color: var(--background-dark); /* Dark background */
+}
+
+.SearchContainer .input {
+  padding: 4px 10px; /* Further reduced top and bottom padding */
+  font-size: 0.9rem; /* Slightly smaller font size */
+  line-height: 1.2; /* Adjust line height for better height control */
+  border: 1px solid var(--accent-color); /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 17px; /* Space below input */
+  width: 100%; /* Full width */
+  max-width: 400px; /* Max width for the input */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .SearchContainer .input {
+  border: 1px solid var(--foreground-dark); /* Dark mode border color */
+  background-color: var(--background-dark); /* Background for dark mode */
+  color: var(--foreground-dark);
+}
+
+/* Focus State */
+.SearchContainer .input:focus {
+  outline: none; /* Remove default outline */
+  border-color: var(--accent-dark); /* Change border on focus */
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5); /* Optional shadow */
+  
+}
+
+
+body.dark-mode .SearchContainer .input:focus {
+  border-color: var(--foreground-dark); /* Change to accent color on focus */
+  box-shadow: 0 0 8px rgba(199, 190, 190, 0.7);
+  
+}
+
+
+
+.searchPageContainer {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px; /* Set a max width for the page */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.searchPageContainer h1 {
+  color: var(--foreground-light); /* Heading color */
+}
+
+.searchHistory {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 10%;
+  margin-right:10%;
+}
+
+.searchHistory li {
+  display: flex; /* Flex for button alignment */
+  justify-content: space-between; /* Space between item text and button */
+  padding: 5px 0;
+  color: var(--foreground-light); /* Text color for light mode */
+}
+
+.deleteButton {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px; /* Space between text and button */
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: var(--accent-dark); /* Darker shade on hover */
+}
+
+.clearHistoryButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clearHistoryButton:hover {
+  background-color: var(--accent-dark); /* Darker shade on hover */
+}
+
+/* Dark Mode */
+body.dark-mode .searchPageContainer {
+  background-color: #2a2a2a; /* Dark background */
+}
+
+body.dark-mode .searchHistory li {
+  color: var(--foreground-dark); /* Text color for dark mode */
+}
+
+body.dark-mode .deleteButton,
+body.dark-mode .clearHistoryButton {
+  background-color: var(--accent-dark); /* Button background in dark mode */
+}
+
+
+
+.deleteImage {
+  cursor: pointer;
+  margin-left: 10px;
+  width: 20px; /* Adjust size as needed */
+  height: auto;
+  transition: opacity 0.3s;
+}
+
+body.dark-mode .deleteImage {
+  content: url('/binl.png'); /* Dark mode image */
+}
+
+body:not(.dark-mode) .deleteImage {
+  content: url('/bin.png'); /* Light mode image */
+}
+
+
+.deleteImage:hover {
+  opacity: 0.7; /* Slightly transparent on hover */
+}
+
+/* Additional styles for light and dark mode */
+body.dark-mode .deleteImage {
+  filter: brightness(0.8); /* Adjust brightness in dark mode */
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  margin-top: 20px; /* Add some space above the button */
+}
